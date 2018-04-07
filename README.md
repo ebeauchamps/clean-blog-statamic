@@ -1,4 +1,4 @@
-## Clean Blog Theme by Emmanuel Beauchamps [Statamic 2.0](https://img.shields.io/badge/statamic-2.8-blue.svg?style=flat-square)
+## Clean Blog Theme by Emmanuel Beauchamps ![Statamic 2.0](https://img.shields.io/badge/statamic-2.8-blue.svg?style=flat-square)
 
 The Statamic 2.x version of the Clean Blog theme by [Start Bootstrap](https://startbootstrap.com/template-overviews/clean-blog/)
   
