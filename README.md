@@ -18,7 +18,7 @@ So go buy one license, or soon a clown will cry.
   
 ## License applying to this theme  
   
-[MIT](https://github.com/ebeauchamps/clean-blog-statamic/license)
+[MIT](https://github.com/ebeauchamps/clean-blog-statamic/blob/master/lICENSE)
   
 ## Support  
   
