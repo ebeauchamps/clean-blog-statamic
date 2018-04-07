@@ -1,0 +1,17 @@
+title: Page
+taxonomies:
+  categories: true
+  tags: true
+fields:
+  description:
+    type: text
+    display: Description
+    instructions: "The subheading of your page's main title"
+    localizable: true
+  header-img:
+    type: assets
+    container: main
+    folder: img
+    display: Header image for your page
+    mode: grid
+    restrict: false

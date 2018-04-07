@@ -1,0 +1,67 @@
+title: Long Post
+hide: true
+taxonomies:
+  categories: true
+  tags: true
+fields:
+  title:
+    type: title
+    display: Title
+    localizable: true
+  subtitle:
+    type: text
+    display: Subtitle
+  author:
+    type: text
+    display: Post author
+  header-img:
+    type: assets
+    container: main
+    folder: img
+    max_files: 1
+    display: Post header image
+    restrict: false
+  template:
+    type: hidden
+    default: long_post
+  long_post:
+    type: replicator
+    display: Long Post Content
+    sets:
+      content_set:
+        display: Post content
+        fields:
+          content:
+            type: markdown
+      section_heading:
+        display: Sub-heading for sections
+        fields:
+          subheading:
+            type: text
+      post_image:
+        display: Post Image
+        fields:
+          filename:
+            display: Photo
+            type: assets
+            container: main
+            folder: img
+            max_files: 1
+          alternate:
+            type: text
+            display: alt tag
+          caption:
+            type: text
+      quote:
+        display: Pull Quote
+        fields:
+          quote:
+            display: The Quote
+            type: markdown
+      video:
+        display: Video
+        fields:
+          video:
+            type: video
+            display: Video
+            width: 100

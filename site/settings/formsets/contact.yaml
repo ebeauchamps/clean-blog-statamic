@@ -1,0 +1,26 @@
+title: Contact Me
+fields:
+  name:
+    display: Name
+    placeholder: Name
+    validate: required|min:2
+  email:
+    display: Email Address
+    placeholder: Email Address
+    validate: required|email
+  phone:
+    display: Phone Number
+    placeholder: Phone Number
+  message:
+    display: Message
+    placeholder: Message
+    validate: required
+columns:
+  - name
+  - email
+  - phone
+  - message
+metrics:
+  - 
+    type: total
+    label: Total Responses

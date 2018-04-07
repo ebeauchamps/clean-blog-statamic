@@ -1,0 +1,12 @@
+site_theme: clean-blog-statamic
+site_name: Clean Blog
+site_language: en
+site_description: A Clean Blog Theme by Start Bootstrap ported to Statamic 2.x by Emmanuel Beauchamps
+site_header-img:
+  - /assets/img/home-bg.jpg
+site_paginate: 4
+twitter_username: statamic
+github_username: statamic
+facebook_username: statamic
+site_root: /
+id: b3e01f3f-1afa-4d8c-accd-30af5cef2ef1

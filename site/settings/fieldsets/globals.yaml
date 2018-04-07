@@ -1,0 +1,42 @@
+title: Default Globals
+hide: true
+taxonomies:
+  categories: true
+  tags: true
+fields:
+  site_theme:
+    type: text
+    display: Website Theme
+    instructions: The name of your Statamic theme folder
+  site_name:
+    type: text
+    display: Website Name
+    instructions: The name of your website
+    localizable: true
+  site_language:
+    type: text
+    display: Website Language
+    instructions: 2 characters short string
+  site_description:
+    type: text
+    display: Website Description
+    instructions: Write your site description here. It will be used as your sites meta description as well!
+    localizable: true  
+  site_header-img:
+    type: assets
+    container: main
+    folder: img
+    display: Default header image for your Website
+    mode: grid
+  site_paginate:
+    type: text
+    instructions: the number of posts displayed on 1 page
+  twitter_username:
+    type: text
+    instructions: your Twitter username
+  github_username:
+    type: text
+    instructions: your Github username
+  facebook_username:
+    type: text
+    instructions: your Facebook username

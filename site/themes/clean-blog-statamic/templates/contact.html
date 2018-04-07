@@ -1,0 +1,63 @@
+{{ partial:nav }}
+
+<!-- Page Header -->
+<header class="intro-header" style="background-image: url('{{ if header-img }}{{ header-img }}{{ else }}{{ asset:site_header-img }}{{ url }}{{ /asset:site_header-img }}{{ /if }}')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>{{ if title=="Home" }} {{ site_name }} {{ else }} {{ title }} {{ /if }}</h1>
+                    <hr class="small">
+                    <span class="subheading">{{ description }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+	
+            	{{ content }}
+  						
+  					{{ form:create in="contact" attr="name:sentMessage|id:contactForm|class:novalidate"}}
+
+            {{ if errors }}
+                <div class="alert alert-danger">
+                    {{ errors }}
+                        {{ value }}<br>
+                    {{ /errors }}
+                </div>
+            {{ /if }}
+
+            {{ if success }}
+                <div class="alert alert-success">
+                    Form was submitted successfully.
+                </div>
+            {{ /if }}
+
+          	{{ fields }}
+          <div class="row control-group">
+            <div class="form-group col-xs-12 floating-label-form-group controls">
+                <label>{{ display }}</label>
+                <input type="text" name="{{ field }}" id="{{ field }}" placeholder="{{ placeholder }}" value="{{ old }}" class="form-control"/>
+                <p class="help-block text-danger"></p>
+            </div>
+          </div>
+						{{ /fields }}
+
+          <br>
+          <div class="row">
+        		<div class="form-group col-xs-12">
+            	<button type="submit" class="btn btn-default">Send</button>
+            </div>
+          </div>
+
+        		{{ /form:create }}
+		</div>
+	</div>
+</div>
+
+<hr>

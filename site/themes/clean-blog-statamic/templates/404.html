@@ -1,0 +1,30 @@
+{{ partial:nav }}
+
+<!-- Page Header -->
+<header class="intro-header" style="background-image: url('{{ if header-img }}{{ header-img }}{{ else }}{{ asset:site_header-img }}{{ url }}{{ /asset:site_header-img }}{{ /if }}')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>{{ if title=="Home" }} {{ site_name }} {{ else }} Not all who wander are lost {{ /if }}</h1>
+                    <hr class="small">
+                    <span class="subheading">this, however, does not seem to apply to you.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+	
+            	<h3>You are stuck inside an infinite loop...or so it seems.</h3>
+            	<b><a href="/">Return home</a></b> my son, and try starting your journey once again.
+  
+		</div>
+	</div>
+</div>
+
+<hr>

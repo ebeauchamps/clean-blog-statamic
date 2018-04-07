@@ -1,0 +1,97 @@
+{{ partial:nav }}
+
+<!-- Post Header -->
+
+<header class="intro-header" style="background-image: url('{{ if header-img }}{{ header-img }}{{ else }}{{ asset:site_header-img }}{{ url }}{{ /asset:site_header-img }}{{ /if }}')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>{{ title }}</h1>
+                    {{ if subtitle }}
+                    <h2 class="subheading">{{ subtitle }}</h2>
+                    {{ /if }}
+                    <span class="meta">Posted by {{ if author }}{{ author }}{{ else }}{{ site_name }}{{ /if }} on {{ date }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+				{{ long_post }}
+				
+					{{ if type == "content_set" }}
+
+                {{ content | markdown }}
+                
+          {{ elseif type == "section_heading" }}
+          
+          			{{ subheading wrap="h2" }}
+          			
+          {{ elseif type == "post_image" }}
+          
+          			<p>
+<a href="#">
+    <img src="{{ filename }}" alt="{{ alternate }}">
+</a>
+								{{ if caption }}
+								<span class="caption text-muted">{{ caption }}</span>
+								{{ /if }}
+          			</p>
+          
+          {{ elseif type == "quote" }}
+          
+          			<blockquote>{{ quote }}</blockquote>
+          			
+          {{ elseif type == "video" }}
+          
+          			<p>
+          			<div class="embed-responsive embed-responsive-16by9">
+                	{{ if video | is_embeddable }}
+                		<iframe src="{{ video | embed_url }}" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                	{{ else }}
+                		<video src="{{ video | embed_url }}"></video>
+                	{{ /if }}
+            		</div>
+          			</p>
+          
+          {{ /if }}
+
+					{{ /long_post }}
+					
+                <hr>
+
+                <ul class="pager">
+                    {{ collection:next in="blog" as="posts" limit="1" }}
+                    	{{ if !no_results }}
+                    {{ posts }}
+                    <li class="previous">
+                        <a href="{{ url }}" data-toggle="tooltip" data-placement="top" title="{{ title }}">&larr; Previous Post</a>
+                    </li>
+                    {{ /posts }}
+                    	{{ /if }}
+                    {{ /collection:next }}
+                    
+                    {{ collection:previous in="blog" as="posts" limit="1" }}
+                    	{{ if !no_results }}
+                    {{ posts }}                    
+                    <li class="next">
+                        <a href="{{ url }}" data-toggle="tooltip" data-placement="top" title="{{ title }}">Next Post &rarr;</a>
+                    </li>
+                    {{ /posts }}
+                    	{{ /if }}
+                    {{ /collection:previous }}
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</article>
+
+<hr>

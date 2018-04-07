@@ -1,0 +1,62 @@
+{{ partial:nav }}
+
+<!-- Page Header -->
+<header class="intro-header" style="background-image: url('{{ if header-img }}{{ header-img }}{{ else }}{{ asset:site_header-img }}{{ url }}{{ /asset:site_header-img }}{{ /if }}')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>{{ if title=="Home" }} {{ site_name }} {{ else }} {{ title }} {{ /if }}</h1>
+                    <hr class="small">
+                    <span class="subheading">{{ description }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+	{{ if segment_1 }}
+            	{{ content }}
+  {{ else }}
+            		{{ collection:blog limit="{site_paginate}" paginate="true" as="posts" }}
+            {{ posts }}
+            <div class="post-preview">
+                <a href="{{ url }}">
+                    <h2 class="post-title">{{ title }}</h2>
+                    {{ if subtitle }}
+                    <h3 class="post-subtitle">{{ subtitle }}</h3>
+                    {{ /if }}
+                </a>
+                <p class="post-meta">Posted by {{ if author }}{{ author }}{{ else }}{{ site_name }}{{ /if }} on {{ date }}</p>
+            </div>
+            {{ /posts }}
+            <hr>
+            
+            <!-- Pager -->
+            {{ paginate }}
+            
+            <ul class="pager">
+                {{ if next_page }}
+                <li class="previous">
+                    <a href="{{ next_page }}">&larr; Older Posts</a>
+                </li>
+                {{ /if }}
+                {{ if prev_page }}
+                <li class="next">
+                    <a href="{{ prev_page }}">Newer Posts &rarr;</a>
+                </li>
+                {{ /if }}
+            </ul>
+            {{ /paginate }}
+            
+								{{ /collection:blog }}
+  {{ /if }}
+		</div>
+	</div>
+</div>
+
+<hr>
